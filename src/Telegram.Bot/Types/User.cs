@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -14,7 +14,7 @@ namespace Telegram.Bot.Types
         /// Unique identifier for this user or bot
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// True, if this user is a bot
@@ -93,7 +93,7 @@ namespace Telegram.Bot.Types
                 hashCode = (hashCode * 397) ^ (Username?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (LanguageCode?.GetHashCode() ?? 0);
                 // ReSharper restore NonReadonlyMemberInGetHashCode
-                return hashCode;
+                return (int)hashCode;
             }
         }
 

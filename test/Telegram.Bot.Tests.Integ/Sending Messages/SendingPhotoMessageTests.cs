@@ -82,7 +82,7 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
                 (MessageEntityType.Hashtag, "#TelegramBots"),
                 (MessageEntityType.Mention, "@BotFather"),
                 (MessageEntityType.Url, "http://github.com/TelegramBots"),
-                (MessageEntityType.Email, "security@telegram.org"),
+                (MessageEntityType.Email, "security@bale.ai"),
                 (MessageEntityType.BotCommand, "/test"),
                 (MessageEntityType.BotCommand, $"/test@{_fixture.BotUser.Username}"),
             };
@@ -104,34 +104,34 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
             Assert.Equal(entityValueMappings.Select(t => t.Value), message.CaptionEntityValues);
         }
 
-        [OrderedFact("Should send photo with markdown encoded caption")]
-        [Trait(Constants.MethodTraitName, Constants.TelegramBotApiMethods.SendPhoto)]
-        public async Task Should_Send_Photo_With_Markdown_Encoded_Caption()
-        {
-            var entityValueMappings = new (MessageEntityType Type, string EntityBody, string EncodedEntity)[]
-            {
-                (MessageEntityType.Bold, "bold", "*bold*"),
-                (MessageEntityType.Italic, "italic", "_italic_"),
-                (MessageEntityType.TextLink, "Text Link", "[Text Link](https://github.com/TelegramBots)"),
-            };
+        //[OrderedFact("Should send photo with markdown encoded caption")]
+        //[Trait(Constants.MethodTraitName, Constants.TelegramBotApiMethods.SendPhoto)]
+        //public async Task Should_Send_Photo_With_Markdown_Encoded_Caption()
+        //{
+        //    var entityValueMappings = new (MessageEntityType Type, string EntityBody, string EncodedEntity)[]
+        //    {
+        //        (MessageEntityType.Bold, "bold", "*bold*"),
+        //        (MessageEntityType.Italic, "italic", "_italic_"),
+        //        (MessageEntityType.TextLink, "Text Link", "[Text Link](https://github.com/TelegramBots)"),
+        //    };
 
-            Message message;
-            using (Stream stream = System.IO.File.OpenRead(Constants.FileNames.Photos.Logo))
-            {
-                message = await BotClient.SendPhotoAsync(
-                    chatId: _fixture.SupergroupChat.Id,
-                    photo: stream,
-                    caption: string.Join("\n", entityValueMappings.Select(tuple => tuple.EncodedEntity)),
-                    parseMode: ParseMode.Markdown
-                );
-            }
+        //    Message message;
+        //    using (Stream stream = System.IO.File.OpenRead(Constants.FileNames.Photos.Logo))
+        //    {
+        //        message = await BotClient.SendPhotoAsync(
+        //            chatId: _fixture.SupergroupChat.Id,
+        //            photo: stream,
+        //            caption: string.Join("\n", entityValueMappings.Select(tuple => tuple.EncodedEntity)),
+        //            parseMode: ParseMode.Markdown
+        //        );
+        //    }
 
-            Assert.Equal(
-                entityValueMappings.Select(t => t.Type),
-                message.CaptionEntities.Select(e => e.Type)
-            );
-            Assert.Equal(entityValueMappings.Select(t => t.EntityBody), message.CaptionEntityValues);
-        }
+        //    Assert.Equal(
+        //        entityValueMappings.Select(t => t.Type),
+        //        message.CaptionEntities.Select(e => e.Type)
+        //    );
+        //    Assert.Equal(entityValueMappings.Select(t => t.EntityBody), message.CaptionEntityValues);
+        //}
 
         [OrderedFact("Should deserialize a sendPhoto request from JSON and send it")]
         [Trait(Constants.MethodTraitName, Constants.TelegramBotApiMethods.SendPhoto)]

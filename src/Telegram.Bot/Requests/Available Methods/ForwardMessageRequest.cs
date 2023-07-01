@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Requests.Abstractions;
 using Telegram.Bot.Types;
@@ -28,7 +28,7 @@ namespace Telegram.Bot.Requests
         /// Message identifier in the chat specified in <see cref="FromChatId"/>
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <inheritdoc />
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -37,7 +37,7 @@ namespace Telegram.Bot.Requests
         /// <summary>
         /// Initializes a new request with chatId, fromChatId and messageId
         /// </summary>
-        public ForwardMessageRequest(ChatId chatdId, ChatId fromChatId, int messageId)
+        public ForwardMessageRequest(ChatId chatdId, ChatId fromChatId, long messageId)
             : base("forwardMessage")
         {
             ChatId = chatdId;

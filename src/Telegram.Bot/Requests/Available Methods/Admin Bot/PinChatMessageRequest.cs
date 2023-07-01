@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Requests.Abstractions;
 using Telegram.Bot.Types;
@@ -22,7 +22,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of a message to pin
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <inheritdoc />
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -33,7 +33,7 @@ namespace Telegram.Bot.Requests
         /// </summary>
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
         /// <param name="messageId">Identifier of a message to pin</param>
-        public PinChatMessageRequest(ChatId chatId, int messageId)
+        public PinChatMessageRequest(ChatId chatId, long messageId)
             : base("pinChatMessage")
         {
             ChatId = chatId;

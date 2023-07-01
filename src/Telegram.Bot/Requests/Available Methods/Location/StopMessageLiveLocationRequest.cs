@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Requests.Abstractions;
 using Telegram.Bot.Types;
@@ -24,7 +24,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <inheritdoc cref="IInlineReplyMarkupMessage.ReplyMarkup" />
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -35,7 +35,7 @@ namespace Telegram.Bot.Requests
         /// </summary>
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
         /// <param name="messageId">Identifier of the sent message</param>
-        public StopMessageLiveLocationRequest(ChatId chatId, int messageId)
+        public StopMessageLiveLocationRequest(ChatId chatId, long messageId)
             : base("stopMessageLiveLocation")
         {
             ChatId = chatId;

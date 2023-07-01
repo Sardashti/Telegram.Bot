@@ -27,13 +27,13 @@ namespace Telegram.Bot
     public class TelegramBotClient : ITelegramBotClient
     {
         /// <inheritdoc/>
-        public int BotId { get; }
+        public long BotId { get; }
 
         private static readonly Update[] EmptyUpdates = { };
 
         private readonly string BaseUrl = "https://tapi.bale.ai/";
 
-        private readonly string BaseFileUrl = "https://api.telegram.org/file/bot";
+        private readonly string BaseFileUrl = "https://api.bale.ai/file/bot";
 
         private readonly string _baseRequestUrl;
 
@@ -62,7 +62,7 @@ namespace Telegram.Bot
         /// <summary>
         /// The current message offset
         /// </summary>
-        public int MessageOffset { get; set; }
+        public long MessageOffset { get; set; }
 
         #endregion Config Properties
 
@@ -157,6 +157,8 @@ namespace Telegram.Bot
         /// </summary>
         /// <param name="token">API token</param>
         /// <param name="httpClient">A custom <see cref="HttpClient"/></param>
+        /// <param name="baseUrl">base Url</param>
+        /// <param name="baseFileUrl">base File Url</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="token"/> format is invalid</exception>
         public TelegramBotClient(string token, HttpClient httpClient = null, string baseUrl = null, string baseFileUrl = null)
         {
@@ -394,9 +396,9 @@ namespace Telegram.Bot
 
         /// <inheritdoc />
         public Task<Update[]> GetUpdatesAsync(
-            int offset = default,
-            int limit = default,
-            int timeout = default,
+            long offset = default,
+            long limit = default,
+            long timeout = default,
             IEnumerable<UpdateType> allowedUpdates = default,
             CancellationToken cancellationToken = default
         ) =>
@@ -462,7 +464,7 @@ namespace Telegram.Bot
         public Task<Message> ForwardMessageAsync(
             ChatId chatId,
             ChatId fromChatId,
-            int messageId,
+            long messageId,
             bool disableNotification = default,
             CancellationToken cancellationToken = default
         ) =>
@@ -967,7 +969,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> StopMessageLiveLocationAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             InlineKeyboardMarkup replyMarkup = default,
             CancellationToken cancellationToken = default
         ) =>
@@ -994,7 +996,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> EditMessageTextAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             string text,
             ParseMode parseMode = default,
             bool disableWebPagePreview = default,
@@ -1027,7 +1029,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> EditMessageCaptionAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             string caption,
             InlineKeyboardMarkup replyMarkup = default,
             CancellationToken cancellationToken = default,
@@ -1056,7 +1058,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> EditMessageMediaAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             InputMediaBase media,
             InlineKeyboardMarkup replyMarkup = default,
             CancellationToken cancellationToken = default
@@ -1081,7 +1083,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> EditMessageReplyMarkupAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             InlineKeyboardMarkup replyMarkup = default,
             CancellationToken cancellationToken = default
         ) =>
@@ -1102,7 +1104,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task<Message> EditMessageLiveLocationAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             float latitude,
             float longitude,
             InlineKeyboardMarkup replyMarkup = default,
@@ -1129,7 +1131,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task DeleteMessageAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             CancellationToken cancellationToken = default
         ) =>
             MakeRequestAsync(new DeleteMessageRequest(chatId, messageId), cancellationToken);
@@ -1270,7 +1272,7 @@ namespace Telegram.Bot
             int userId,
             int score,
             long chatId,
-            int messageId,
+            long messageId,
             bool force = default,
             bool disableEditMessage = default,
             CancellationToken cancellationToken = default
@@ -1300,7 +1302,7 @@ namespace Telegram.Bot
         public Task<GameHighScore[]> GetGameHighScoresAsync(
             int userId,
             long chatId,
-            int messageId,
+            long messageId,
             CancellationToken cancellationToken = default
         ) =>
             MakeRequestAsync(
@@ -1362,7 +1364,7 @@ namespace Telegram.Bot
         /// <inheritdoc />
         public Task PinChatMessageAsync(
             ChatId chatId,
-            int messageId,
+            long messageId,
             bool disableNotification = default,
             CancellationToken cancellationToken = default
         ) =>

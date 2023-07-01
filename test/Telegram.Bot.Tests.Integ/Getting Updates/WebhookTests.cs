@@ -30,7 +30,7 @@ namespace Telegram.Bot.Tests.Integ.Getting_Updates
         {
             await _fixture.SendTestCaseNotificationAsync(FactTitles.ShouldSetWebhook);
 
-            await BotClient.SetWebhookAsync("https://www.telegram.org/");
+            await BotClient.SetWebhookAsync("https://www.bale.ai/");
 
             await BotClient.DeleteWebhookAsync();
         }
@@ -66,7 +66,7 @@ namespace Telegram.Bot.Tests.Integ.Getting_Updates
         {
             await _fixture.SendTestCaseNotificationAsync(FactTitles.ShouldSetWebhookWithCertificate);
 
-            const string url = "https://www.telegram.org/";
+            const string url = "https://www.bale.ai/";
             const int maxConnections = 5;
 
             using (Stream stream = File.OpenRead(Constants.FileNames.Certificate.PublicKey))

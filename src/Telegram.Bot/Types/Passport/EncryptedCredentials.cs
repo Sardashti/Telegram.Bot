@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 // ReSharper disable once CheckNamespace
@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types.Passport
 {
     /// <summary>
     /// Contains data required for decrypting and authenticating <see cref="EncryptedPassportElement"/>.
-    /// See the <see href="https://core.telegram.org/passport#receiving-information">Telegram Passport
+    /// See the <see href="https://core.bale.ai/passport#receiving-information">Telegram Passport
     /// Documentation</see> for a complete description of the data decryption and authentication processes.
     /// </summary>
     [JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]

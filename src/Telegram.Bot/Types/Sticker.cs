@@ -5,7 +5,7 @@ namespace Telegram.Bot.Types
 {
     /// <summary>
     /// This object represents a sticker.
-    /// <see href="https://core.telegram.org/bots/api#sticker"/>
+    /// <see href="https://core.bale.ai/bots/api#sticker"/>
     /// </summary>
     [JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Sticker : FileBase

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.Payments;
@@ -20,7 +20,7 @@ namespace Telegram.Bot.Types
         /// restore the correct update sequence, should they get out of order.
         /// </summary>
         [JsonProperty("update_id", Required = Required.Always)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Optional. New incoming message of any kind — text, photo, sticker, etc.

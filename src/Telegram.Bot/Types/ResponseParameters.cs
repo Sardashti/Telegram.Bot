@@ -19,6 +19,6 @@ namespace Telegram.Bot.Types
         /// In case of exceeding flood control, the number of seconds left to wait before the request can be repeated.
         /// </summary>
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int RetryAfter { get; set; }
+        public long RetryAfter { get; set; }
     }
 }

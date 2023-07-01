@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Types;
 
@@ -27,7 +27,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <summary>
         /// Initializes a new request with userId, chatId and messageId
@@ -35,7 +35,7 @@ namespace Telegram.Bot.Requests
         /// <param name="userId">Target user id</param>
         /// <param name="chatId">Unique identifier for the target chat</param>
         /// <param name="messageId">Identifier of the sent message</param>
-        public GetGameHighScoresRequest(int userId, long chatId, int messageId)
+        public GetGameHighScoresRequest(int userId, long chatId, long messageId)
             : base("getGameHighScores")
         {
             UserId = userId;

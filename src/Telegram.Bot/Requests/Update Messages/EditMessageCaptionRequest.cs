@@ -26,7 +26,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <summary>
         /// New caption of the message
@@ -48,7 +48,7 @@ namespace Telegram.Bot.Requests
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
         /// <param name="messageId">Identifier of the sent message</param>
         /// <param name="caption">New caption of the message</param>
-        public EditMessageCaptionRequest(ChatId chatId, int messageId, string caption = default)
+        public EditMessageCaptionRequest(ChatId chatId, long messageId, string caption = default)
             : base("editMessageCaption")
         {
             ChatId = chatId;

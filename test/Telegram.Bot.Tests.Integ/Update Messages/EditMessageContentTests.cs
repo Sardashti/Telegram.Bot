@@ -98,7 +98,7 @@ namespace Telegram.Bot.Tests.Integ.Update_Messages
             });
 
             InputMessageContentBase inputMessageContent =
-                new InputTextMessageContent("https://core.telegram.org/bots/api");
+                new InputTextMessageContent("https://core.bale.ai/bots/api");
 
             InlineQueryResultBase[] inlineQueryResults =
             {

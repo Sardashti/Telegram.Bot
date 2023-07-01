@@ -37,7 +37,7 @@ namespace Telegram.Bot.Tests.Integ.Update_Messages
                     new InlineQueryResultArticle(
                         id: "article-to-delete",
                         title: "Telegram Bot API",
-                        inputMessageContent: new InputTextMessageContent("https://www.telegram.org/")
+                        inputMessageContent: new InputTextMessageContent("https://www.bale.ai/")
                     )
                 },
                 cacheTime: 0

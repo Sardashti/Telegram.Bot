@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types.Payments
     /// <summary>
     /// This object represents a portion of the price for goods or services.
     /// </summary>
-    /// <see href="https://core.telegram.org/bots/api#labeledprice"/>
+    /// <see href="https://core.bale.ai/bots/api#labeledprice"/>
     [JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class LabeledPrice
     {
@@ -17,7 +17,7 @@ namespace Telegram.Bot.Types.Payments
         public string Label { get; set; }
 
         /// <summary>
-        /// Price of the product in the smallest units of the <see href="https://core.telegram.org/bots/payments#supported-currencies">currency</see>.
+        /// Price of the product in the smallest units of the <see href="https://core.bale.ai/bots/payments#supported-currencies">currency</see>.
         /// </summary>
         [JsonProperty(Required = Required.Always)]
         public int Amount { get; set; }

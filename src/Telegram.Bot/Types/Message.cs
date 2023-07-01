@@ -20,7 +20,7 @@ namespace Telegram.Bot.Types
         /// Unique message identifier
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; set; }
+        public long MessageId { get; set; }
 
         /// <summary>
         /// Sender

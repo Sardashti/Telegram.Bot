@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Types;
 
@@ -27,14 +27,14 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <summary>
         /// Initializes a new request with chatId and messageId
         /// </summary>
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
         /// <param name="messageId">Identifier of the sent message</param>
-        public DeleteMessageRequest(ChatId chatId, int messageId)
+        public DeleteMessageRequest(ChatId chatId, long messageId)
             : base("deleteMessage")
         {
             ChatId = chatId;

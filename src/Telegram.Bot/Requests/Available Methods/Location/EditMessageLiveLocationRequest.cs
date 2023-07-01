@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Requests.Abstractions;
 using Telegram.Bot.Types;
@@ -24,7 +24,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <summary>
         /// Latitude of new location
@@ -49,7 +49,7 @@ namespace Telegram.Bot.Requests
         /// <param name="messageId">Identifier of the sent message</param>
         /// <param name="latitude">Latitude of new location</param>
         /// <param name="longitude">Longitude of new location</param>
-        public EditMessageLiveLocationRequest(ChatId chatId, int messageId, float latitude, float longitude)
+        public EditMessageLiveLocationRequest(ChatId chatId, long messageId, float latitude, float longitude)
             : base("editMessageLiveLocation")
         {
             ChatId = chatId;

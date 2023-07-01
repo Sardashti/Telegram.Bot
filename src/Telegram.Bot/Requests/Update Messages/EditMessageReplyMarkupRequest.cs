@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Requests.Abstractions;
 using Telegram.Bot.Types;
@@ -24,7 +24,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <inheritdoc cref="IInlineReplyMarkupMessage.ReplyMarkup" />
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -38,7 +38,7 @@ namespace Telegram.Bot.Requests
         /// <param name="replyMarkup">New inline keyboard of the sent message</param>
         public EditMessageReplyMarkupRequest(
             ChatId chatId,
-            int messageId,
+            long messageId,
             InlineKeyboardMarkup replyMarkup = default)
             : base("editMessageReplyMarkup")
         {

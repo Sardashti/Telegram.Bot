@@ -53,9 +53,9 @@ use it in your own bot projects.
 
 <!-- ---- -->
 
-[Telegram Bot API]: https://core.telegram.org/bots/api
-[Telegram]: https://www.telegram.org/
-[_Bots: An introduction for developers_]: https://core.telegram.org/bots
+[Telegram Bot API]: https://core.bale.ai/bots/api
+[Telegram]: https://www.bale.ai/
+[_Bots: An introduction for developers_]: https://core.bale.ai/bots
 [Telegram Bots team]: https://github.com/orgs/TelegramBots/people
 [NuGet packages]: https://www.nuget.org/profiles/TelegramBots
 [`@tgbots_dotnet`]: https://t.me/tgbots_dotnet

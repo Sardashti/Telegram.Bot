@@ -13,7 +13,7 @@ namespace Telegram.Bot.Types
         /// Position in high score table for the game.
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int Position { get; set; }
+        public long Position { get; set; }
 
         /// <summary>
         /// User
@@ -25,6 +25,6 @@ namespace Telegram.Bot.Types
         /// Score
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int Score { get; set; }
+        public long Score { get; set; }
     }
 }

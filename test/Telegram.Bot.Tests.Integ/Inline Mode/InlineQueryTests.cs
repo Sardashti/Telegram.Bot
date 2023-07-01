@@ -46,7 +46,7 @@ namespace Telegram.Bot.Tests.Integ.Inline_Mode
                     id: "article:bot-api",
                     title: "Telegram Bot API",
                     inputMessageContent: new InputTextMessageContent(
-                        "https://core.telegram.org/bots/api")
+                        "https://core.bale.ai/bots/api")
                 )
                 {
                     Description = "The Bot API is an HTTP-based interface created for developers",

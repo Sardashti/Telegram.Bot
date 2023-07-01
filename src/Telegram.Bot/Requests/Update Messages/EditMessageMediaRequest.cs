@@ -26,7 +26,7 @@ namespace Telegram.Bot.Requests
         /// Identifier of the sent message
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int MessageId { get; }
+        public long MessageId { get; }
 
         /// <summary>
         /// New media content of the message
@@ -44,7 +44,7 @@ namespace Telegram.Bot.Requests
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
         /// <param name="messageId">Identifier of the sent message</param>
         /// <param name="media">New media content of the message</param>
-        public EditMessageMediaRequest(ChatId chatId, int messageId, InputMediaBase media)
+        public EditMessageMediaRequest(ChatId chatId, long messageId, InputMediaBase media)
             : base("editMessageMedia")
         {
             ChatId = chatId;

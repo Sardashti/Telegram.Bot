@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace Telegram.Bot.Types
@@ -13,13 +13,13 @@ namespace Telegram.Bot.Types
         /// Video width and height as defined by sender
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int Length { get; set; }
+        public long Length { get; set; }
 
         /// <summary>
         /// Duration of the video in seconds as defined by sender
         /// </summary>
         [JsonProperty(Required = Required.Always)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Optional. Video thumbnail

@@ -28,7 +28,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
                 cancellationToken = source.Token;
             }
 
-            int offset = 0;
+            long offset = 0;
 
             while (!cancellationToken.IsCancellationRequested)
             {
@@ -45,7 +45,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
 
         public async Task<Update[]> GetUpdatesAsync(
             Func<Update, bool> predicate = default,
-            int offset = default,
+            long offset = default,
             CancellationToken cancellationToken = default,
             params UpdateType[] updateTypes)
         {
@@ -76,7 +76,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
         }
 
         public async Task<Update> GetCallbackQueryUpdateAsync(
-            int messageId = default,
+            long messageId = default,
             string data = default,
             bool discardNewUpdates = true,
             CancellationToken cancellationToken = default)
@@ -142,7 +142,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
         }
 
         private async Task<Update[]> GetOnlyAllowedUpdatesAsync(
-            int offset, CancellationToken cancellationToken, params UpdateType[] types)
+            long offset, CancellationToken cancellationToken, params UpdateType[] types)
         {
             var updates = await _botClient.GetUpdatesAsync(
                 offset,

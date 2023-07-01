@@ -94,12 +94,12 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
         [Trait(Constants.MethodTraitName, Constants.TelegramBotApiMethods.SendMessage)]
         public async Task Should_Parse_MarkDown_Entities()
         {
-            const string url = "https://telegram.org/";
+            const string url = "https://bale.ai/";
             Dictionary<MessageEntityType, string> entityValueMappings = new Dictionary<MessageEntityType, string>
             {
                 {MessageEntityType.Bold, "*bold*"},
                 {MessageEntityType.Italic, "_italic_"},
-                {MessageEntityType.TextLink, $"[inline url to Telegram.org]({url})"},
+                {MessageEntityType.TextLink, $"[inline url to bale.ai]({url})"},
                 {
                     MessageEntityType.TextMention,
                     $"[{_fixture.BotUser.Username.Replace("_", @"\_")}](tg://user?id={_fixture.BotUser.Id})"
@@ -127,14 +127,14 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
         [Trait(Constants.MethodTraitName, Constants.TelegramBotApiMethods.SendMessage)]
         public async Task Should_Parse_HTML_Entities()
         {
-            const string url = "https://telegram.org/";
+            const string url = "https://bale.ai/";
             (MessageEntityType Type, string Value)[] entityValueMappings =
             {
                 (MessageEntityType.Bold, "<b>bold</b>"),
                 (MessageEntityType.Bold, "<strong>&lt;strong&gt;</strong>"),
                 (MessageEntityType.Italic, "<i>italic</i>"),
                 (MessageEntityType.Italic, "<em>&lt;em&gt;</em>"),
-                (MessageEntityType.TextLink, $@"<a href=""{url}"">inline url to Telegram.org</a>"),
+                (MessageEntityType.TextLink, $@"<a href=""{url}"">inline url to bale.ai</a>"),
                 (
                     MessageEntityType.TextMention,
                     $@"<a href=""tg://user?id={_fixture.BotUser.Id}"">{_fixture.BotUser.Username}</a>"
@@ -172,7 +172,7 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
                 (MessageEntityType.Hashtag, "#TelegramBots"),
                 (MessageEntityType.Mention, "@BotFather"),
                 (MessageEntityType.Url, "http://github.com/TelegramBots"),
-                (MessageEntityType.Email, "security@telegram.org"),
+                (MessageEntityType.Email, "security@bale.ai"),
                 (MessageEntityType.BotCommand, "/test"),
                 (MessageEntityType.BotCommand, $"/test@{_fixture.BotUser.Username}"),
             };

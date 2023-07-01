@@ -60,7 +60,7 @@ namespace Telegram.Bot.Tests.Integ.Exceptions
                 new InlineQueryResultArticle(
                     id: "article:bot-api",
                     title: "Telegram Bot API",
-                    inputMessageContent: new InputTextMessageContent("https://core.telegram.org/bots/api"))
+                    inputMessageContent: new InputTextMessageContent("https://core.bale.ai/bots/api"))
                 {
                     Description = "The Bot API is an HTTP-based interface created for developers",
                 },
